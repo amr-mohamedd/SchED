@@ -1,0 +1,33 @@
+task: piqa_generative
+dataset_path: baber/piqa
+dataset_name: null
+output_type: generate_until
+training_split: train
+validation_split: validation
+test_split: null
+doc_to_text: "Question: {{goal}}\nA. {{sol1}}\nB. {{sol2}}\nA or B:\n"
+doc_to_target: "{{['A', 'B'][label]}}"
+should_decontaminate: true
+doc_to_decontamination_query: goal
+generation_kwargs:
+  until:
+    - "</s>"
+    - "\n"
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_punctuation: true
+    ignore_case: true
+filter_list:
+  - name: first_char_only
+    filter:
+      # Keep only the first non-whitespace A/B at the start
+      - function: "regex"
+        # ^\s*    -> skip any leading spaces or bullets
+        # (?i:([ab])) -> capture the first A or B, case-insensitive
+        regex_pattern: "^[\\s>*-]*?(?i:([ab]))"
+      # If regex finds multiple matches, just take the first capture
+      - function: take_first
+metadata:
+  version: 1.0

@@ -1,0 +1,69 @@
+{
+  "mmlu_generative": {
+    "default_steps": 5,
+    "answer_window": 5,
+    "answer_length": 5,
+    "fewshot": 5
+  },
+  "hellaswag_generative": {
+    "default_steps": 5,
+    "answer_window": 5,
+    "answer_length": 5,
+    "fewshot": 5
+  },
+  "piqa_generative": {
+    "default_steps": 5,
+    "answer_window": 5,
+    "answer_length": 5,
+    "fewshot": 5
+  },
+  "winogrande_generative": {
+    "default_steps": 5,
+    "answer_window": 5,
+    "answer_length": 5,
+    "fewshot": 5
+  },
+  "gpqa_main_cot_n_shot": { 
+    "default_steps": 128,
+    "answer_window": 128,
+    "answer_length": 128,
+    "fewshot": 8
+  },
+  "gsm8k_cot": {
+    "default_steps": 256,
+    "answer_window": 256,
+    "answer_length": 256,
+    "fewshot": 8
+  },
+  "gsm8k": {
+    "default_steps": 256,
+    "answer_window": 256,
+    "answer_length": 256,
+    "fewshot": 8
+  },
+
+  "wmt14-en-fr": {
+    "default_steps": 256,
+    "answer_window": 256,
+    "answer_length": 256,
+    "fewshot": 5
+  },
+  "wmt16-en-de": {
+    "default_steps": 256,
+    "answer_window": 256,
+    "answer_length": 256,
+    "fewshot": 5
+  },
+  "longbench_multi_news": {
+    "default_steps": 512,
+    "answer_window": 512,
+    "answer_length": 512,
+    "fewshot": 0
+  },
+  "longbench_hotpotqa": {
+    "default_steps": 32,
+    "answer_window": 32,
+    "answer_length": 32,
+    "fewshot": 0
+  }
+}

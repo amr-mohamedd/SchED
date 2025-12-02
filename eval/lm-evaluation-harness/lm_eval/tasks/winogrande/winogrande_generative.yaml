@@ -1,0 +1,29 @@
+task: winogrande_generative
+dataset_path: winogrande
+dataset_name: winogrande_xl
+output_type: generate_until
+training_split: train
+validation_split: validation
+doc_to_text: !function preprocess_winogrande.doc_to_text_generative
+doc_to_target: !function preprocess_winogrande.doc_to_target_generative
+should_decontaminate: true
+doc_to_decontamination_query: sentence
+generation_kwargs:
+  until:
+    - "</s>"
+    - "\n"
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_punctuation: true
+    ignore_case: true
+filter_list:
+  - name: first_char_only
+    filter:
+      - function: "regex"
+        regex_pattern: "^[\\s>*-]*?(?i:([ab]))"
+      - function: take_first
+
+metadata:
+  version: 1.0

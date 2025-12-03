@@ -1,6 +1,6 @@
 # Fast-Decoding Diffusion Language Models via Progress‑Aware Confidence Schedules (SchED)
 
-SchED (Fast Decoding Diffusion Language Models via Progress‑Aware Confidence Schedules) is a training‑free, model‑agnostic early‑exit mechanism for diffusion language models. It accelerates decoding by monitoring an aggregated confidence signal and stopping when a smooth, progress‑dependent threshold is met.
+This repository contains the code accompanying the research paper "Fast Decoding Diffusion Language Models via Progress‑Aware Confidence Schedules". SchED is a training‑free, model‑agnostic early‑exit mechanism for diffusion language models. It accelerates decoding by monitoring an aggregated confidence signal and stopping when a smooth, progress‑dependent threshold is met.
 
 Repository structure
 - `dream_sampling/`: Schedule‑based (`sched.py`) early‑exit sampler for Dream‑style diffusion LMs.
@@ -112,9 +112,17 @@ Task defaults and reproducibility
   - Exponential curvature: `tau_k` in `{2, 4, 8, 16}`
   - Aggregation: `stat=mean`, `answer_region=all`, `average_over_masked=true`
 
-<!-- Citation
-If you find this useful, please cite:
+Citation
 
+If you find this useful, please cite:
 ```
-TBD
-``` -->
+@misc{mohamed2025fastdecodingdiffusionlanguagemodels,
+      title={Fast-Decoding Diffusion Language Models via Progress-Aware Confidence Schedules}, 
+      author={Amr Mohamed and Yang Zhang and Michalis Vazirgiannis and Guokan Shang},
+      year={2025},
+      eprint={2512.02892},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2512.02892}, 
+}
+```
